@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2 class="logo">Smooth Transitions</h2>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="/" data-page="0" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Welcome</span>
+                </a>
+                <a href="/animations" data-page="1" class="nav-link">
+                    <span class="nav-icon">✨</span>
+                    <span class="nav-text">Animations</span>
+                </a>
+                <a href="/effects" data-page="2" class="nav-link">
+                    <span class="nav-icon">🎭</span>
+                    <span class="nav-text">Effects</span>
+                </a>
+                <a href="/interaction" data-page="3" class="nav-link">
+                    <span class="nav-icon">👆</span>
+                    <span class="nav-text">Interaction</span>
+                </a>
+                <a href="/ready" data-page="4" class="nav-link">
+                    <span class="nav-icon">🚀</span>
+                    <span class="nav-text">Ready</span>
+                </a>
+            </nav>
+
+            <!-- <div class="sidebar-footer">
+                
+                <div class="transition-controls">
+                    <label class="control-label">Transition Style:</label>
+                    <select class="transition-select" id="transitionType">
+                        <option value="slide">Slide</option>
+                        <option value="fade">Fade</option>
+                        <option value="zoom">Zoom</option>
+                        <option value="rotate">Rotate</option>
+                        <option value="flip">Flip</option>
+                        <option value="cube">Cube</option>
+                    </select>
+                </div>
+
+                
+                <div class="page-indicator">
+                    <div class="indicator-dot" data-page="0"></div>
+                    <div class="indicator-dot" data-page="1"></div>
+                    <div class="indicator-dot" data-page="2"></div>
+                    <div class="indicator-dot" data-page="3"></div>
+                    <div class="indicator-dot" data-page="4"></div>
+                </div>
+            </div> -->
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-container" id="pageContainer">
+                <%- include(`pages/${page}`) %>
+            </div>
+        </main>
+
+        <!-- Mobile Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </div>
+
+    <script src="/js/transitions.js"></script>
+    <script>
+        // Initialize with current page
+        window.currentPageIndex = <%= pageIndex %>;
+        initializePage();
+    </script>
+</body>
+</html>
