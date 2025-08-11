@@ -3,8 +3,6 @@
 A Node.js + Express + EJS template demonstrating **smooth, iOS-like page transitions** for the web.  
 Includes a clean sidebar navigation, gradient backgrounds, and animated page switching.
 
-![Smooth Transitions Screenshot](docs/screenshot.png)
-
 ---
 
 ## 🚀 Features
